@@ -4,13 +4,10 @@
     <string name="name">Name(Required)</string>
     <string name="log_in_register">Log in/Register</string>
     <string name="continue_as_a_guest">continue as a guest</string>
-    <string name="title_activity_menu">menu_activity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="field_uvi">Field UVI</string>
+    <string name="check_soil_data_for_a_field">Check soil data for a field</string>
+    <string name="check_plant_status">Check plant status</string>
+    <string name="field_weather_data">Field weather data</string>
+    <string name="create_a_field_perimeter">Create a field perimeter</string>
+    <string name="see_my_fields_data">See my fields data</string>
 </resources>

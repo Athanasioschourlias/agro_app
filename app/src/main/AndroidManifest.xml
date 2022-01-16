@@ -10,10 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Agro_app">
         <activity
-            android:name=".menu_activity"
-            android:exported="false"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/Theme.Agro_app.NoActionBar" />
+            android:name=".FieldUVI"
+            android:exported="false" />
+        <activity
+            android:name=".FieldSoilData"
+            android:exported="false" />
+        <activity
+            android:name=".PlantStatus"
+            android:exported="false" />
+        <activity
+            android:name=".WeatherData"
+            android:exported="false" />
+        <activity
+            android:name=".CreateFieldPerimeter"
+            android:exported="false" />
+        <activity
+            android:name=".FieldData"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -10,13 +10,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    //TODO: make the database system
     fun logInUser(view: android.view.View) {
         //check if the user entered all the necessary info(e-mail) and if no username autogenerate one! user-001.....
         //Check if the user exists, if not create one
-        startActivity(Intent(this, menu_activity::class.java))
+        startActivity(Intent(this, MenuActivity::class.java))
     }
 
     fun guestUser(view: android.view.View) {
-        startActivity(Intent(this, menu_activity::class.java))
+        startActivity(Intent(this, MenuActivity::class.java))
     }
 }
