@@ -1,18 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/welcome_page_background"
+    android:orientation="vertical"
+    >
 
     <TextView
+        android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:fontStyle="italic"
+        android:fontWeight="900"
+        android:text="WELCOME!!"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:textColor="#6200EE"
+        android:layout_marginTop="40dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/welcome_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontStyle="italic"
+        android:fontWeight="900"
+        android:text="Let's get to know each other!"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#6200EE"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/name_input"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_width="340dp"
+        android:layout_marginTop="70dp"
+        android:drawablePadding="10dp"
+        android:paddingStart="12dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_name_icon"
+        android:inputType="textAutoComplete"
+        android:hint="@string/name"
+        android:textSize="16sp"
+        />
+
+
+    <EditText
+        android:id="@+id/mail_input"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:paddingStart="12dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_email_icon"
+        android:drawablePadding="10dp"
+        android:hint="@string/e_mail_address"
+        android:inputType="textEmailAddress"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/log_in"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="@string/log_in_register"
+        android:onClick="logInUser"/>
+
+
+    <Button
+        android:id="@+id/guest"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/continue_as_a_guest"
+        android:onClick="guestUser"/>
+
+</LinearLayout>
