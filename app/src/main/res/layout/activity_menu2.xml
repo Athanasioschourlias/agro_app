@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_layout"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuActivity"
     android:background="@color/background"
-    android:orientation="vertical">
-
-    <Button
-        android:id="@+id/my_fields"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:text="@string/see_my_fields_data"
-        android:onClick="fieldsData"/>
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
 
     <Button
         android:id="@+id/create_polygon"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         android:text="@string/create_a_field_perimeter"
         android:onClick="createFieldPerimeter"/>
 
@@ -30,7 +22,6 @@
         android:id="@+id/weather"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:text="@string/field_weather_data"
         android:onClick="weatherData"/>
@@ -39,7 +30,6 @@
         android:id="@+id/NVDI"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:text="@string/check_plant_status"
         android:onClick="plantStatus"/>
@@ -48,7 +38,6 @@
         android:id="@+id/soil_data"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:text="@string/check_soil_data_for_a_field"
         android:onClick="fieldSoilData"/>
@@ -57,9 +46,17 @@
         android:id="@+id/UVI"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:text="@string/field_uvi"
         android:onClick="UVI"/>
+
+        <Button
+            android:id="@+id/my_fields"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/see_my_fields_data"
+            android:visibility="gone"
+            android:onClick="fieldsData"/>
 
 </LinearLayout>

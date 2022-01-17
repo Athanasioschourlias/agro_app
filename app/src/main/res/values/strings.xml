@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">agro_app</string>
-    <string name="e_mail_address">E-mail address(Optional)</string>
-    <string name="name">Name(Required)</string>
+    <string name="e_mail_address">E-mail address(Required)</string>
+    <string name="name">Name(Optional)</string>
     <string name="log_in_register">Log in/Register</string>
     <string name="continue_as_a_guest">continue as a guest</string>
     <string name="field_uvi">Field UVI</string>
@@ -10,4 +10,7 @@
     <string name="field_weather_data">Field weather data</string>
     <string name="create_a_field_perimeter">Create a field perimeter</string>
     <string name="see_my_fields_data">See my fields data</string>
+    <string name="latitude_and_longitude">Please enter the latitude and longitude of the field you would like to see the current weather report from:</string>
+    <string name="latitude_required">Latitude(Required)</string>
+    <string name="longitude_required">Longitude(Required)</string>
 </resources>

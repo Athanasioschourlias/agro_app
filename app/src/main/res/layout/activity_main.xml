@@ -35,11 +35,25 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
+        android:id="@+id/mail_input"
+        android:layout_width="340dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:paddingStart="12dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_email_icon"
+        android:drawablePadding="10dp"
+        android:hint="@string/e_mail_address"
+        android:inputType="textEmailAddress"
+        android:textSize="16sp" />
+
+    <EditText
         android:id="@+id/name_input"
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_width="340dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="10dp"
         android:drawablePadding="10dp"
         android:paddingStart="12dp"
         android:background="@drawable/custom_input"
@@ -48,21 +62,6 @@
         android:hint="@string/name"
         android:textSize="16sp"
         />
-
-
-    <EditText
-        android:id="@+id/mail_input"
-        android:layout_width="340dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:paddingStart="12dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/custom_email_icon"
-        android:drawablePadding="10dp"
-        android:hint="@string/e_mail_address"
-        android:inputType="textEmailAddress"
-        android:textSize="16sp" />
 
     <Button
         android:id="@+id/log_in"

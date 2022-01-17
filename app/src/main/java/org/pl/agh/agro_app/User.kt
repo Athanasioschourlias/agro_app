@@ -10,6 +10,7 @@ data class User(
     @ColumnInfo(name = "user_Email") val userEmail: String,
     @ColumnInfo(name = "username") val userName: String?
 ){
-    constructor(e_mail: String, userName: String?) :
-            this(0,e_mail,userName)
+    constructor(Email: String, userName: String?) :
+            this(0,Email,userName)
+
 }
