@@ -95,5 +95,7 @@ class WeatherData : AppCompatActivity() {
 
     }
 
+    fun createPolygon(view: android.view.View) {}
+
 
 }

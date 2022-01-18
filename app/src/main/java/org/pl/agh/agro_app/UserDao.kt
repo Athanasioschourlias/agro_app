@@ -23,9 +23,6 @@ import androidx.room.Query
         @Query("SELECT * FROM user WHERE userId = (:userId)")
         fun getUserById(userId: Int): User
 
-        @Query("INSERT INTO user (user_Email,username) VALUES (:userEmail, :userName)")
-        fun saveUser(userEmail: String, userName: String): Long
-
         @Insert
         fun insertAll(vararg users: User)
 

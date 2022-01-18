@@ -27,25 +27,10 @@ class MenuActivity : AppCompatActivity() {
             val button = findViewById<View>(R.id.my_fields)
             button.setVisibility(View.VISIBLE)
             create_polygon.setVisibility(View.VISIBLE)
-            NVDI.setVisibility(View.VISIBLE)
-            soil_data.setVisibility(View.VISIBLE)
-            UVI.setVisibility(View.VISIBLE)
             my_fields.setVisibility(View.VISIBLE)
         }
 
 
-    }
-
-    fun UVI(view: android.view.View) {
-        startActivity(Intent(this, FieldUVI::class.java).putExtra("apikey",apiKey))
-    }
-
-    fun fieldSoilData(view: android.view.View) {
-        startActivity(Intent(this, FieldSoilData::class.java).putExtra("apikey",apiKey))
-    }
-
-    fun plantStatus(view: android.view.View) {
-        startActivity(Intent(this, PlantStatus::class.java).putExtra("apikey",apiKey))
     }
 
     fun weatherData(view: android.view.View) {
@@ -53,7 +38,7 @@ class MenuActivity : AppCompatActivity() {
     }
 
     fun createFieldPerimeter(view: android.view.View) {
-        startActivity(Intent(this, CreateFieldPerimeter::class.java).putExtra("apikey",apiKey))
+        startActivity(Intent(this, CreatePolygonActivity::class.java).putExtra("apikey",apiKey))
     }
 
     fun fieldsData(view: android.view.View) {

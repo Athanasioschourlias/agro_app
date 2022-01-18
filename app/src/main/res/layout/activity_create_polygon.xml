@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CreatePolygonActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:verticalScrollbarPosition="defaultPosition">
+
+            <TextView
+                android:id="@+id/cordinatesOfCorners"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontStyle="italic"
+                android:fontWeight="900"
+                android:text="Please Enter the coordinates of the corners of the fields you would like to save and monitor. You need at least three points:"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"/>
+
+
+            <TextView
+                android:id="@+id/corner1text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontStyle="italic"
+                android:fontWeight="900"
+                android:layout_below="@id/cordinatesOfCorners"
+                android:text="First Point"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/corner1"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/corner1text"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_map_icon"
+                android:drawablePadding="10dp"
+                android:hint="@string/latitude_required"
+                android:inputType="numberSigned"
+                android:paddingStart="12dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/corner2"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/corner1text"
+                android:layout_alignEnd="@id/corner1"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_map_icon"
+                android:drawablePadding="10dp"
+                android:hint="@string/longitude_required"
+                android:inputType="numberSigned"
+                android:paddingStart="12dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/corner2text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontStyle="italic"
+                android:fontWeight="900"
+                android:layout_below="@id/corner2"
+                android:text="Second point"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/corner3"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:paddingStart="12dp"
+                android:background="@drawable/custom_input"
+                android:layout_below="@id/corner2text"
+                android:drawableStart="@drawable/custom_map_icon"
+                android:drawablePadding="10dp"
+                android:hint="@string/longitude_required"
+                android:inputType="numberSigned"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/corner4"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:paddingStart="12dp"
+                android:layout_below="@id/corner2text"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_map_icon"
+                android:drawablePadding="10dp"
+                android:hint="@string/longitude_required"
+                android:inputType="numberSigned"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/corner3text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontStyle="italic"
+                android:fontWeight="900"
+                android:layout_below="@id/corner4"
+                android:text="Third Point"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/corner5"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/corner3text"
+                android:paddingStart="12dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_map_icon"
+                android:drawablePadding="10dp"
+                android:hint="@string/longitude_required"
+                android:inputType="numberSigned"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/corner6"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:paddingStart="12dp"
+                android:layout_below="@id/corner3text"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_map_icon"
+                android:drawablePadding="10dp"
+                android:hint="@string/longitude_required"
+                android:inputType="numberSigned"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/corner4text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontStyle="italic"
+                android:fontWeight="900"
+                android:layout_below="@id/corner5"
+                android:text="Fourth Point"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/corner7"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/corner4text"
+                android:paddingStart="12dp"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_map_icon"
+                android:drawablePadding="10dp"
+                android:hint="@string/longitude_required"
+                android:inputType="numberSigned"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/corner8"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:paddingStart="12dp"
+                android:layout_below="@id/corner4text"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/custom_map_icon"
+                android:drawablePadding="10dp"
+                android:hint="@string/longitude_required"
+                android:inputType="numberSigned"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/create_polygon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/corner8"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:text="Set Field Corners"
+                android:onClick="createPolygon"/>
+
+
+            <TextView
+                android:id="@+id/res"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontStyle="italic"
+                android:fontWeight="900"
+                android:layout_below="@id/create_polygon"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/teal_200"
+                android:layout_marginTop="5dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

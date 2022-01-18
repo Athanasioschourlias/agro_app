@@ -12,21 +12,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val db = Room.databaseBuilder(
-            applicationContext,
-            AppDatabase::class.java, "userdatabase"
-        ).allowMainThreadQueries()
-            .enableMultiInstanceInvalidation()
-            .fallbackToDestructiveMigration()
-            .build()
-
-        val userDao = db.userDao()
-
-        val users: List<User> = userDao.getAll()
-        for (user in users){
-            Log.i("UserApp", user.toString())
-        }
     }
 
     fun logInUser(view: android.view.View) {
@@ -37,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         //Connection to our db
         val db = Room.databaseBuilder(
             applicationContext,
-            AppDatabase::class.java, "userdatabase"
+            AppDatabase::class.java, "agrodb"
         ).allowMainThreadQueries()
             .enableMultiInstanceInvalidation()
             .fallbackToDestructiveMigration()

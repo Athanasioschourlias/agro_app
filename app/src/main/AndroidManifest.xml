@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Agro_app">
         <activity
+            android:name=".CreatePolygonActivity"
+            android:exported="false" />
+        <activity
             android:name=".FieldUVI"
             android:exported="false" />
         <activity
