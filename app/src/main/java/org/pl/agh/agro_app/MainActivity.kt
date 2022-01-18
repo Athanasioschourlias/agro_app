@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //TODO: make the database system
     fun logInUser(view: android.view.View) {
 
         if( mail_input.text.isNullOrEmpty() )
