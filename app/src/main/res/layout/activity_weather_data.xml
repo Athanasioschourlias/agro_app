@@ -60,12 +60,14 @@
         android:text="Search"
         android:onClick="getWeatherReport"/>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="32dp"
         android:layout_marginTop="50dp">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,7 +81,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="10dp"
-                android:drawableStart="@drawable/weather_news"
                 android:drawablePadding="10dp"
                 android:fontStyle="italic"
                 android:fontWeight="900"
@@ -95,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="10dp"
+                android:drawableStart="@drawable/weather_news"
                 android:fontStyle="italic"
                 android:fontWeight="900"
                 android:textSize="16dp"
@@ -108,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="10dp"
-                android:drawableStart="@drawable/custom_map_icon"
+                android:drawableStart="@drawable/temperature"
                 android:fontStyle="italic"
                 android:fontWeight="900"
                 android:textSize="16dp"
@@ -122,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="10dp"
-                android:drawableStart="@drawable/custom_map_icon"
+                android:drawableStart="@drawable/hot_weather"
                 android:fontStyle="italic"
                 android:fontWeight="900"
                 android:textSize="16dp"
@@ -136,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="10dp"
-                android:drawableStart="@drawable/custom_map_icon"
+                android:drawableStart="@drawable/temperature_min"
                 android:fontStyle="italic"
                 android:fontWeight="900"
                 android:textSize="16dp"
@@ -150,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="10dp"
-                android:drawableStart="@drawable/custom_map_icon"
+                android:drawableStart="@drawable/season"
                 android:fontStyle="italic"
                 android:fontWeight="900"
                 android:textSize="16dp"
@@ -170,7 +172,21 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_marginTop="20dp"
-                app:drawableStartCompat="@drawable/custom_map_icon" />
+                app:drawableStartCompat="@drawable/humidity"/>
+
+            <TextView
+                android:id="@+id/pressure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="10dp"
+                android:fontStyle="italic"
+                android:fontWeight="900"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                app:drawableStartCompat="@drawable/indicator"/>
 
             <TextView
                 android:id="@+id/windSpeed"
@@ -178,16 +194,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="10dp"
-                android:drawableStart="@drawable/custom_map_icon"
+                android:drawableStart="@drawable/wind"
                 android:fontStyle="italic"
                 android:fontWeight="900"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_marginTop="20dp"/>
-
-
         </LinearLayout>
-
     </ScrollView>
 </LinearLayout>

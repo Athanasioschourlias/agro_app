@@ -1,5 +1,6 @@
 package org.pl.agh.agro_app
 
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -11,6 +12,8 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_weather_data.*
 import org.json.JSONObject
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 class WeatherData : AppCompatActivity() {
 
@@ -42,10 +45,45 @@ class WeatherData : AppCompatActivity() {
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
                 val weatherJson: JSONObject = response.getJSONArray("weather").get(0) as JSONObject
-//                val mainJson: JSONObject = response.getJSONObject("main") as JSONObject
-//                val windJson: JSONObject = response.getJSONObject("wind") as JSONObject
-//                val cloudsJson: JSONObject = response.getJSONObject("clouds") as JSONObject
-                main.setText(weatherJson.get("main").toString())
+
+                var mydrawable: Drawable?
+
+                if(weatherJson.get("main").toString().equals("Clouds")){
+                    mydrawable = getResources().getDrawable(R.drawable.cloudy_day)
+                }else if(weatherJson.get("main").toString().equals("Rain")){
+                    mydrawable = getResources().getDrawable(R.drawable.cloudy_rain)
+                }else if(weatherJson.get("main").toString().equals("Clear") || weatherJson.get("main").toString().equals("Sunny")){
+                    mydrawable = getResources().getDrawable(R.drawable.sun)
+                }else if(weatherJson.get("main").toString().equals("Snow")){
+                    mydrawable = getResources().getDrawable(R.drawable.snow)
+                }else if(weatherJson.get("main").toString().equals("Extreme")){
+                    mydrawable = getResources().getDrawable(R.drawable.storm)
+                }else{
+                    mydrawable = getResources().getDrawable(R.drawable.season)
+                }
+
+                main
+                    .setCompoundDrawablesRelativeWithIntrinsicBounds(
+                        mydrawable,
+                        null,
+                        null,
+                        null
+                    )
+
+
+                main.setText("Overall situation: " + weatherJson.get("main").toString())
+
+                description.setText("Main weather Description: " + weatherJson.get("description").toString())
+                val mainJson: JSONObject = response.getJSONObject("main") as JSONObject
+                tempreture.setText("Temperature: " + mainJson.get("temp").toString() + " Kelvin")
+                tempretureMin.setText("Minimum Temperature: " + mainJson.get("temp_min").toString() + " Kelvin")
+                tempretureMax.setText("Maximum Temperature: " + mainJson.get("temp_max").toString() + " Kelvin")
+                feelsLike.setText("Feels like: " + mainJson.get("feels_like").toString()  + " Kelvin")
+                humidity.setText("Humidity: " + mainJson.get("humidity").toString() + "%")
+                pressure.setText("Atmospheric pressure: " + mainJson.get("pressure").toString() + "hPa")
+
+                val windJson: JSONObject = response.getJSONObject("wind") as JSONObject
+                windSpeed.setText("Wind speed: " +windJson.get("speed").toString() + " Meter/sec")
             },
             { error ->
                 main.setText("Oupsssss We couldn't find the place you are looking for check the cordinates and try again")
