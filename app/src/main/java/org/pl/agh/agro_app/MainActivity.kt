@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             username = userDao.getUserById(userDao.userExists(mail)).userName.toString()
             mail_input.setText("")
             name_input.setText("")
-            startActivity(Intent(this, MenuActivity::class.java).putExtra("logedInUser", username))
+            startActivity(Intent(this, MenuActivity::class.java).putExtra("logedInUser", username).putExtra("email",mail))
             return
         }
 
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         //Inserting the new user to the db
         userDao.insertAll(User(Email = mail, userName = username))
 
-        startActivity(Intent(this, MenuActivity::class.java).putExtra("logedInUser", username))
+        startActivity(Intent(this, MenuActivity::class.java).putExtra("logedInUser", username).putExtra("email",mail))
     }
 
     fun guestUser(view: android.view.View) {

@@ -15,6 +15,7 @@ import org.json.JSONObject
 import org.json.JSONException
 
 import android.R.attr.theme
+import androidx.room.Room
 import org.json.JSONArray
 
 
@@ -28,6 +29,7 @@ class CreatePolygonActivity : AppCompatActivity() {
     // Instantiate the RequestQueue.
     lateinit var queue: RequestQueue
     private lateinit var apikey: String
+    lateinit var email: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,9 @@ class CreatePolygonActivity : AppCompatActivity() {
 
         queue = Volley.newRequestQueue(this)
         apikey = intent.getStringExtra("apikey").toString()
+        email = intent.getStringExtra("email").toString()
+
+
     }
 
     fun createPolygon(view: android.view.View) {
@@ -47,6 +52,15 @@ class CreatePolygonActivity : AppCompatActivity() {
         var lonC3 = corner6.text
         var latC4 = corner7.text
         var lonC4 = corner8.text
+
+        //Connection to our db
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "agrodb"
+        ).allowMainThreadQueries()
+            .enableMultiInstanceInvalidation()
+            .fallbackToDestructiveMigration()
+            .build()
 
         //checking if the user entered the minimum number of points
         if(
@@ -116,6 +130,10 @@ class CreatePolygonActivity : AppCompatActivity() {
                 try {
                     val polyId: JSONObject = response.get("id") as JSONObject
                     res.text = "polygon id is: $polyId"
+                    val userId = db.userDao().userExists(email)
+
+                    db.userPolygonsDao().insertAll(UserPolygons(users_id = userId,polygonId = polyId.toString()))
+
                 }catch (e:Exception){
                     res.text = "Exception: $e"
                 }

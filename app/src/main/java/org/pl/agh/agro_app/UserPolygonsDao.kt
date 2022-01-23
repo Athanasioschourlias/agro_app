@@ -10,6 +10,9 @@ interface UserPolygonsDao {
     @Query("SELECT * FROM polygons")
     fun getAll(): List<UserPolygons>
 
+    @Query("SELECT polygonId FROM polygons")
+    fun getAllPolyIds():List<String>
+
     @Insert
     fun insertAll(vararg userPolygons: UserPolygons)
 
